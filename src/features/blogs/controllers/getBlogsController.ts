@@ -1,0 +1,14 @@
+//Функция вывода
+import {Request, Response} from "express";
+import {db, HTTP_STATUSES} from "../../../db/db";
+import {BlogViewModel} from "../../../input-output-type/blog_type";
+import {blogsRepository} from "../blogsRepository";
+
+export const getBlogsController = (req: Request,
+                                   res: Response<BlogViewModel[]>) => {
+    const blogs =  blogsRepository.getAll()// получаем базы данных
+
+    res
+        .status(HTTP_STATUSES.OK_200)
+        .json(blogs) // отдаём видео в качестве ответа
+}
