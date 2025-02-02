@@ -28,7 +28,5 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
-  "private": true,
-  "author": "«nastassiamak» <redfox.asya@gmail.com>",
-  "license": "MIT"
+  "repository": "git@github.com:nastassiamak/back-hw-02.git"
 }
