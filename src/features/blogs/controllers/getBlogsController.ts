@@ -1,6 +1,6 @@
 //Функция вывода
 import {Request, Response} from "express";
-import {db, HTTP_STATUSES} from "../../../db/db";
+import {HTTP_STATUSES} from "../../../db/db";
 import {BlogViewModel} from "../../../input-output-type/blog_type";
 import {blogsRepository} from "../blogsRepository";
 

@@ -1,5 +1,5 @@
 import {Request, Response} from 'express'
-import {OutputErrorsType} from "../input-output-type/error_type";
+import {OutputErrorsType} from "../../input-output-type/error_type";
 
 export type ParamType = {
     id: string

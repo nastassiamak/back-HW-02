@@ -1,17 +1,17 @@
 import {Router} from "express";
-import {getBlogsController} from "./controllres/getBlogsController";
-import {findBlogController} from "./controllres/findBlogController";
-import {delBlogController} from "./controllres/delBlogController";
-import {putBlogController} from "./controllres/putBlogController";
-import {createBlogController} from "./controllres/createBlogController";
+import {getBlogsController} from "./controllers/getBlogsController";
+import {findBlogController} from "./controllers/findBlogController";
+import {delBlogController} from "./controllers/delBlogController";
+import {putBlogController} from "./controllers/putBlogController";
+import {createBlogController} from "./controllers/createBlogController";
 import {blogValidators, findBlogValidator} from "./blogValidators";
-import {adminMiddleware} from "../admin-middleware";
-import {inputCheckErrorsMiddleware} from "../inputCheckErrorsMiddleware";
+import {adminMiddleware} from "../../global_middlewares/admin-middleware";
+
 
 export const blogsRouter = Router()
 
-blogsRouter.post('/', ...blogValidators, inputCheckErrorsMiddleware, createBlogController)
+blogsRouter.post('/', ...blogValidators, createBlogController)
 blogsRouter.get('/', getBlogsController)
 blogsRouter.get('/:id', findBlogValidator, findBlogController)
 blogsRouter.delete('/:id', adminMiddleware, findBlogValidator, delBlogController)
-blogsRouter.put('/:id', ...blogValidators, inputCheckErrorsMiddleware, putBlogController)
+blogsRouter.put('/:id', findBlogValidator, ...blogValidators, putBlogController)

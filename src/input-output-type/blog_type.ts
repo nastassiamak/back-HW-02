@@ -1,9 +1,3 @@
-export type BlogBDType = {
-    id: string;
-    name: string;
-    description: string;
-    websiteUrl: string;
-}
 
 export type BlogViewModel = {
     id: string;

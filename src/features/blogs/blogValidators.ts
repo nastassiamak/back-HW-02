@@ -1,9 +1,9 @@
 import {body} from "express-validator";
 import {Request, Response} from "express";
 import {NextFunction} from "express";
-import {adminMiddleware} from "../admin-middleware";
-import {HTTP_STATUSES} from "../db/db";
-import {inputCheckErrorsMiddleware} from "../inputCheckErrorsMiddleware";
+import {adminMiddleware} from "../../global_middlewares/admin-middleware";
+import {HTTP_STATUSES} from "../../db/db";
+import {inputCheckErrorsMiddleware} from "../../global_middlewares/inputCheckErrorsMiddleware";
 
 // name: string // max 15
 // description: string // max 500
@@ -30,7 +30,10 @@ export const findBlogValidator = (req: Request<{id: string}>,
 
 export const blogValidators = [
     adminMiddleware,
+
     nameValidator,
     descriptionValidator,
     websiteUrlValidator,
+
+    inputCheckErrorsMiddleware,
 ]

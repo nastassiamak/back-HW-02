@@ -1,7 +1,7 @@
-import {HTTP_STATUSES} from "./db/db";
+import {HTTP_STATUSES} from "../db/db";
 import {Request, Response, NextFunction} from "express";
-import {codedAuth} from "../__tests__/helpers/dataset";
-import {SETTINGS} from "./setting";
+import {codedAuth} from "../../__tests__/helpers/dataset";
+import {SETTINGS} from "../setting";
 
 
 export const fromBase64ToUTF8 = (code: string) => {

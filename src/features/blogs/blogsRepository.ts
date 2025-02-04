@@ -1,6 +1,6 @@
-import {BlogInputModel, BlogViewModel} from "../input-output-type/blog_type";
-import {BlogBbType} from "../db/blog-db-type";
-import {db} from "../db/db";
+import {BlogInputModel, BlogViewModel} from "../../input-output-type/blog_type";
+import {BlogBbType} from "../../db/blog-db-type";
+import {db} from "../../db/db";
 
 
 export const blogsRepository = {
@@ -40,10 +40,15 @@ export const blogsRepository = {
 
     //Метод для удаления блога по ID.
     del(id: string) {
-        const index = db.blogs.findIndex(b => b.id === id) //// Находим индекс блога для обновления
-        if (index > -1) {
-            db.blogs.splice(index, 1); //удаляем блог из массива
+        const index = db.blogs.findIndex(b => b.id === id);
+
+        if (index !== -1) {
+            const deletedBlog = db.blogs[index]; // Сохраняем удалить объект
+            db.blogs.splice(index, 1); // Удаляем блог из массива
+            return deletedBlog; // Возвращаем удаленный объект
         }
+
+        return null; // Возвращаем null, если блог не найден
     },
 
     //Метод для обновления существующего блога по ID.

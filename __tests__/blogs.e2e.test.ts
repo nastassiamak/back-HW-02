@@ -1,6 +1,8 @@
 import {BlogInputModel} from "../src/input-output-type/blog_type";
 import {SETTINGS} from "../src/setting";
-import {db} from "../src/db/db";
+import {db, HTTP_STATUSES, setDB} from "../src/db/db";
+import {codedAuth, createString, dataset1} from "./helpers/dataset";
+import {req} from "./helpers/test-helpers";
 
 
 describe('/blogs', () => {
@@ -9,7 +11,7 @@ describe('/blogs', () => {
     // })
 
     it('should create', async () => {
-        //setDB()
+        setDB()
         const newBlog: BlogInputModel = {
             name: 'n1',
             description: 'd1',
@@ -20,7 +22,7 @@ describe('/blogs', () => {
             .post(SETTINGS.PATH.BLOGS)
             .set({'Authorization': 'Basic ' + codedAuth})
             .send(newBlog) // отправка данных
-            .expect(201)
+            .expect(HTTP_STATUSES.CREATED_201)
 
         // console.log(res.body)
 
@@ -42,9 +44,9 @@ describe('/blogs', () => {
         const res = await req
             .post(SETTINGS.PATH.BLOGS)
             .send(newBlog) // отправка данных
-            .expect(401)
+            .expect(HTTP_STATUSES.UNAUTHORIZED_401)
 
-        // console.log(res.body)
+         console.log(res.body)
 
         expect(db.blogs.length).toEqual(0)
     })
@@ -60,9 +62,9 @@ describe('/blogs', () => {
             .post(SETTINGS.PATH.BLOGS)
             .set({'Authorization': 'Basic ' + codedAuth})
             .send(newBlog) // отправка данных
-            .expect(400)
+            .expect(HTTP_STATUSES.BAD_REQUEST_400)
 
-        // console.log(res.body)
+        console.log(res.body)
 
         expect(res.body.errorsMessages.length).toEqual(3)
         expect(res.body.errorsMessages[0].field).toEqual('name')
@@ -76,7 +78,7 @@ describe('/blogs', () => {
 
         const res = await req
             .get(SETTINGS.PATH.BLOGS)
-            .expect(200) // проверяем наличие эндпоинта
+            .expect(HTTP_STATUSES.OK_200) // проверяем наличие эндпоинта
 
         console.log(res.body) // можно посмотреть ответ эндпоинта
 
@@ -87,7 +89,7 @@ describe('/blogs', () => {
 
         const res = await req
             .get(SETTINGS.PATH.BLOGS)
-            .expect(200)
+            .expect(HTTP_STATUSES.OK_200)
 
         // console.log(res.body)
 
@@ -99,7 +101,7 @@ describe('/blogs', () => {
 
         const res = await req
             .get(SETTINGS.PATH.BLOGS + '/1')
-            .expect(404) // проверка на ошибку
+            .expect(HTTP_STATUSES.NOT_FOUND_404) // проверка на ошибку
 
         // console.log(res.body)
     })
@@ -108,7 +110,7 @@ describe('/blogs', () => {
 
         const res = await req
             .get(SETTINGS.PATH.BLOGS + '/' + dataset1.blogs[0].id)
-            .expect(200) // проверка на ошибку
+            .expect(HTTP_STATUSES.OK_200) // проверка на ошибку
 
         // console.log(res.body)
 
@@ -120,9 +122,9 @@ describe('/blogs', () => {
         const res = await req
             .delete(SETTINGS.PATH.BLOGS + '/' + dataset1.blogs[0].id)
             .set({'Authorization': 'Basic ' + codedAuth})
-            .expect(204) // проверка на ошибку
+            .expect(HTTP_STATUSES.NO_CONTENT_204) // проверка на ошибку
 
-        // console.log(res.body)
+        console.log(res.body)
 
         expect(db.blogs.length).toEqual(0)
     })
@@ -132,9 +134,9 @@ describe('/blogs', () => {
         const res = await req
             .delete(SETTINGS.PATH.BLOGS + '/1')
             .set({'Authorization': 'Basic ' + codedAuth})
-            .expect(404) // проверка на ошибку
+            .expect(HTTP_STATUSES.NOT_FOUND_404) // проверка на ошибку
 
-        // console.log(res.body)
+        //console.log(res.body)
     })
     it('shouldn\'t del 401', async () => {
         setDB()
@@ -142,7 +144,7 @@ describe('/blogs', () => {
         const res = await req
             .delete(SETTINGS.PATH.BLOGS + '/1')
             .set({'Authorization': 'Basic' + codedAuth}) // no ' '
-            .expect(401) // проверка на ошибку
+            .expect(HTTP_STATUSES.UNAUTHORIZED_401) // проверка на ошибку
 
         // console.log(res.body)
     })
@@ -158,7 +160,7 @@ describe('/blogs', () => {
             .put(SETTINGS.PATH.BLOGS + '/' + dataset1.blogs[0].id)
             .set({'Authorization': 'Basic ' + codedAuth})
             .send(blog)
-            .expect(204) // проверка на ошибку
+            .expect(HTTP_STATUSES.NO_CONTENT_204) // проверка на ошибку
 
         // console.log(res.body)
 
@@ -176,9 +178,9 @@ describe('/blogs', () => {
             .put(SETTINGS.PATH.BLOGS + '/1')
             .set({'Authorization': 'Basic ' + codedAuth})
             .send(blog)
-            .expect(404) // проверка на ошибку
+            .expect(HTTP_STATUSES.NOT_FOUND_404) // проверка на ошибку
 
-        // console.log(res.body)
+        console.log(res.body)
     })
     it('shouldn\'t update2', async () => {
         setDB(dataset1)
@@ -192,9 +194,9 @@ describe('/blogs', () => {
             .put(SETTINGS.PATH.BLOGS + '/' + dataset1.blogs[0].id)
             .set({'Authorization': 'Basic ' + codedAuth})
             .send(blog)
-            .expect(400) // проверка на ошибку
+            .expect(HTTP_STATUSES.BAD_REQUEST_400) // проверка на ошибку
 
-        // console.log(res.body)
+        //console.log(res.body)
 
         expect(db).toEqual(dataset1)
         expect(res.body.errorsMessages.length).toEqual(3)
@@ -214,7 +216,7 @@ describe('/blogs', () => {
             .put(SETTINGS.PATH.BLOGS + '/' + dataset1.blogs[0].id)
             .set({'Authorization': 'Basic ' + codedAuth + 'error'})
             .send(blog)
-            .expect(401) // проверка на ошибку
+            .expect(HTTP_STATUSES.UNAUTHORIZED_401) // проверка на ошибку
 
         // console.log(res.body)
 
