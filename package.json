@@ -2,11 +2,12 @@
   "name": "back-hw-02",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/app.ts",
   "scripts": {
-    "dev": "nodemon --inspect dist/index.js",
     "watch": "tsc -w",
-    "jest": "jest -i"
+    "dev": "yarn nodemon --inspect dist/app.js",
+    "jest": "jest -i",
+    "jest:coverage": "jest -i --coverage"
   },
   "dependencies": {
     "@types/jest": "^29.5.14",
