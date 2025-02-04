@@ -6,9 +6,9 @@ import {req} from "./helpers/test-helpers";
 
 
 describe('/blogs', () => {
-    // beforeAll(async () => { // очистка базы данных перед началом тестирования
-    //     setDB()
-    // })
+    beforeAll(async () => { // очистка базы данных перед началом тестирования
+        setDB()
+    })
 
     it('should create', async () => {
         setDB()
@@ -46,7 +46,7 @@ describe('/blogs', () => {
             .send(newBlog) // отправка данных
             .expect(HTTP_STATUSES.UNAUTHORIZED_401)
 
-         console.log(res.body)
+        // console.log(res.body)
 
         expect(db.blogs.length).toEqual(0)
     })
@@ -64,7 +64,7 @@ describe('/blogs', () => {
             .send(newBlog) // отправка данных
             .expect(HTTP_STATUSES.BAD_REQUEST_400)
 
-        console.log(res.body)
+        //console.log(res.body)
 
         expect(res.body.errorsMessages.length).toEqual(3)
         expect(res.body.errorsMessages[0].field).toEqual('name')
@@ -80,7 +80,7 @@ describe('/blogs', () => {
             .get(SETTINGS.PATH.BLOGS)
             .expect(HTTP_STATUSES.OK_200) // проверяем наличие эндпоинта
 
-        console.log(res.body) // можно посмотреть ответ эндпоинта
+       // console.log(res.body) // можно посмотреть ответ эндпоинта
 
         expect(res.body.length).toEqual(0) // проверяем ответ эндпоинта
     })
@@ -124,7 +124,7 @@ describe('/blogs', () => {
             .set({'Authorization': 'Basic ' + codedAuth})
             .expect(HTTP_STATUSES.NO_CONTENT_204) // проверка на ошибку
 
-        console.log(res.body)
+        //console.log(res.body)
 
         expect(db.blogs.length).toEqual(0)
     })
@@ -180,7 +180,7 @@ describe('/blogs', () => {
             .send(blog)
             .expect(HTTP_STATUSES.NOT_FOUND_404) // проверка на ошибку
 
-        console.log(res.body)
+        //console.log(res.body)
     })
     it('shouldn\'t update2', async () => {
         setDB(dataset1)

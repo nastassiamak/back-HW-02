@@ -6,9 +6,9 @@ import {SETTINGS} from "../src/setting";
 
 
 describe('/posts', () => {
-     // beforeAll(async () => {
-     //     setDB()
-     // })
+     beforeAll(async () => {
+         setDB()
+     })
 
 
     it('should create', async () => {
