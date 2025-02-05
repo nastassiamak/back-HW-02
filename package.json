@@ -28,5 +28,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   },
-  "repository": "git@github.com:nastassiamak/back-hw-02.git"
+  "repository": "git@github.com:nastassiamak/back-hw-02.git",
+  "license": "MIT"
 }
