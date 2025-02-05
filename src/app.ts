@@ -4,6 +4,7 @@ import {SETTINGS} from "./setting";
 import {blogsRouter} from "./features/blogs/blogsRouter";
 import {testingRouter} from "./features/testing";
 import {postsRouter} from "./features/posts/postsRouter";
+import {HTTP_STATUSES, setDB} from "./db/db";
 
 export const app = express() // создать приложение
 
@@ -14,9 +15,16 @@ app.use(cors()) // разрешить любым фронтам делать з�
 
 app.get('/', (req, res) => {
     // эндпоинт, который будет показывать на верселе какая версия бэкэнда сейчас залита
-    res.status(200).json({version: '1.0'})
+    res.status(HTTP_STATUSES.OK_200).json({version: '1.0'})
 })
 
 app.use(SETTINGS.PATH.BLOGS, blogsRouter)
 app.use(SETTINGS.PATH.POSTS, postsRouter)
 app.use(SETTINGS.PATH.TESTING, testingRouter)
+
+//Дефолтное состояние БД
+app.delete('/testing/all-data', (req, res) => {
+    setDB()
+    res.sendStatus(HTTP_STATUSES.NO_CONTENT_204)
+});
+
