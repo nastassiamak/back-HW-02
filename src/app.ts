@@ -22,9 +22,4 @@ app.use(SETTINGS.PATH.BLOGS, blogsRouter)
 app.use(SETTINGS.PATH.POSTS, postsRouter)
 app.use(SETTINGS.PATH.TESTING, testingRouter)
 
-//Дефолтное состояние БД
-app.delete('/testing/all-data', (req, res) => {
-    setDB()
-    res.sendStatus(HTTP_STATUSES.NO_CONTENT_204)
-});
 

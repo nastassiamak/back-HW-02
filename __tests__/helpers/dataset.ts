@@ -21,9 +21,9 @@ export const createString = (length: number) => {
 
 export const blog1: BlogBbType = {
     id: new Date().toISOString() + Math.random(),
-    name: 'name1',
-    description: 'description1',
-    websiteUrl: 'http://example.com',
+    name: 'n1',
+    description: 'd1',
+    websiteUrl: 'http://example1.com',
 } as const // dataset нельзя изменять
 
 export const blog5: BlogBbType = {

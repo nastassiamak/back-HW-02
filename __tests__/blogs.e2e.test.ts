@@ -24,7 +24,7 @@ describe('/blogs', () => {
             .send(newBlog) // отправка данных
             .expect(HTTP_STATUSES.CREATED_201)
 
-        // console.log(res.body)
+        console.log(res.body)
 
         expect(res.body.name).toEqual(newBlog.name)
         expect(res.body.description).toEqual(newBlog.description)
