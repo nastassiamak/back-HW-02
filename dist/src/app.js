@@ -11,6 +11,7 @@ const blogsRouter_1 = require("./features/blogs/blogsRouter");
 const testing_1 = require("./features/testing");
 const postsRouter_1 = require("./features/posts/postsRouter");
 exports.app = (0, express_1.default)(); // создать приложение
+//console.log('Аргументы командной строки:', process.argv); // Вывод аргументов
 exports.app.use(express_1.default.json()); // создание свойств-объектов body и query во всех реквестах
 exports.app.use((0, cors_1.default)()); // разрешить любым фронтам делать запросы на наш бэк
 exports.app.get('/', (req, res) => {
