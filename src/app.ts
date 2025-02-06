@@ -4,7 +4,7 @@ import {SETTINGS} from "./setting";
 import {blogsRouter} from "./features/blogs/blogsRouter";
 import {testingRouter} from "./features/testing";
 import {postsRouter} from "./features/posts/postsRouter";
-import {HTTP_STATUSES, setDB} from "./db/db";
+import {HTTP_STATUSES} from "./db/db";
 
 export const app = express() // создать приложение
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1738830210079" clover="3.2.0">
-  <project timestamp="1738830210079" name="All files">
+<coverage generated="1738831902113" clover="3.2.0">
+  <project timestamp="1738831902113" name="All files">
     <metrics statements="261" coveredstatements="251" conditionals="38" coveredconditionals="29" methods="45" coveredmethods="42" elements="344" coveredelements="322" complexity="0" loc="261" ncloc="261" packages="9" files="24" classes="24"/>
     <package name="__tests__.helpers">
       <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -325,28 +325,28 @@
       <file name="admin-middleware.ts" path="/Users/anastasiamak/WebstormProjects/back-hw-02/src/global_middlewares/admin-middleware.ts">
         <metrics statements="23" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
         <line num="14" count="18" type="stmt"/>
         <line num="15" count="18" type="stmt"/>
-        <line num="16" count="18" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="19" type="stmt"/>
-        <line num="21" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
-        <line num="28" count="17" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="36" count="16" type="stmt"/>
-        <line num="40" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="41" count="3" type="stmt"/>
-        <line num="44" count="3" type="stmt"/>
-        <line num="47" count="13" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="19" type="stmt"/>
+        <line num="20" count="19" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="17" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="35" count="16" type="stmt"/>
+        <line num="39" count="16" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="46" count="13" type="stmt"/>
       </file>
       <file name="inputCheckErrorsMiddleware.ts" path="/Users/anastasiamak/WebstormProjects/back-hw-02/src/global_middlewares/inputCheckErrorsMiddleware.ts">
         <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>

@@ -1,7 +1,7 @@
 {
   "name": "back-hw-02",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "git@github.com:nastassiamak/back-hw-02.git",
   "author": "«nastassiamak» <redfox.asya@gmail.com>",
   "license": "MIT",

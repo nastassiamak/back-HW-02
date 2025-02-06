@@ -4,7 +4,6 @@ import {SETTINGS} from "../src/setting";
 import {db, HTTP_STATUSES, setDB} from "../src/db/db";
 import {codedAuth, createString, dataset1} from "./helpers/dataset";
 import {req} from "./helpers/test-helpers";
-import {app} from "../src/app";
 
 
 describe('/blogs', () => {
@@ -27,7 +26,7 @@ describe('/blogs', () => {
             .send(newBlog) // отправка данных
             .expect(HTTP_STATUSES.CREATED_201)
 
-        console.log(res.body)
+        //console.log(res.body)
 
         expect(res.body.name).toEqual(newBlog.name)
         expect(res.body.description).toEqual(newBlog.description)
@@ -221,7 +220,7 @@ describe('/blogs', () => {
             .send(blog)
             .expect(HTTP_STATUSES.UNAUTHORIZED_401) // проверка на ошибку
 
-        // console.log(res.body)
+        //console.log(res.body)
 
         expect(db).toEqual(dataset1)
     })
