@@ -10,7 +10,7 @@ import {app} from "../src/app";
 describe('/blogs', () => {
     beforeAll(async () => { // очистка базы данных перед началом тестирования
         setDB()
-        await req.delete('/testing/all-data')
+
     })
 
     it('should create', async () => {
@@ -27,7 +27,7 @@ describe('/blogs', () => {
             .send(newBlog) // отправка данных
             .expect(HTTP_STATUSES.CREATED_201)
 
-        //console.log(res.body)
+        console.log(res.body)
 
         expect(res.body.name).toEqual(newBlog.name)
         expect(res.body.description).toEqual(newBlog.description)

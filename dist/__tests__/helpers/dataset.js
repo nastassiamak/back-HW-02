@@ -15,9 +15,9 @@ const createString = (length) => {
 exports.createString = createString;
 exports.blog1 = {
     id: new Date().toISOString() + Math.random(),
-    name: 'name1',
-    description: 'description1',
-    websiteUrl: 'http://example.com',
+    name: 'n1',
+    description: 'd1',
+    websiteUrl: 'http://example1.com',
 }; // dataset нельзя изменять
 exports.blog5 = {
     id: new Date().toISOString() + Math.random(),

@@ -6,6 +6,7 @@ import {blogsRepository} from "../blogsRepository";
 export const createBlogController = (req: Request<any, any, BlogInputModel>,
                                     res:Response<BlogViewModel>) =>{
     const newBlogId = blogsRepository.create(req.body)
+
     const newBlog = blogsRepository.findAndMap(newBlogId)
 
     res
