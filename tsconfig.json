@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "rootDir": "./back-hw-02",
+    "module": "commonjs", // или "ES6", в зависимости от вашей конфигурации
+    "target": "es6",
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

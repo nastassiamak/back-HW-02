@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1738823444495" clover="3.2.0">
-  <project timestamp="1738823444495" name="All files">
-    <metrics statements="258" coveredstatements="248" conditionals="38" coveredconditionals="29" methods="45" coveredmethods="42" elements="341" coveredelements="319" complexity="0" loc="258" ncloc="258" packages="9" files="24" classes="24"/>
+<coverage generated="1738830210079" clover="3.2.0">
+  <project timestamp="1738830210079" name="All files">
+    <metrics statements="261" coveredstatements="251" conditionals="38" coveredconditionals="29" methods="45" coveredmethods="42" elements="344" coveredelements="322" complexity="0" loc="261" ncloc="261" packages="9" files="24" classes="24"/>
     <package name="__tests__.helpers">
-      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="dataset.ts" path="/Users/anastasiamak/WebstormProjects/back-hw-02/__tests__/helpers/dataset.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="dataset.js" path="/Users/anastasiamak/WebstormProjects/back-hw-02/__tests__/helpers/dataset.js">
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="18" type="stmt"/>
-        <line num="15" count="18" type="stmt"/>
-        <line num="16" count="5253" type="stmt"/>
-        <line num="18" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="10" count="18" type="stmt"/>
+        <line num="11" count="5253" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
         <line num="36" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
       </file>
       <file name="test-helpers.ts" path="/Users/anastasiamak/WebstormProjects/back-hw-02/__tests__/helpers/test-helpers.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
